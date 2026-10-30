@@ -17,9 +17,9 @@ services:
       - key: EMBER_DATABASE
         value: /var/data/ember.sqlite3
       - key: EMBER_KITCHEN_PIN
-        sync: false
+        value: "1234"
       - key: EMBER_ADMIN_PIN
-        sync: false
+        value: "1234"
     disk:
       name: ember-data
       mountPath: /var/data

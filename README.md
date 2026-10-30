@@ -9,8 +9,8 @@ Requires Python 3.10 or newer. No third-party Python packages are required.
 
 [Deploy EMBER to Render](https://render.com/deploy?repo=https://github.com/Pratikkarthiya/ember)
 
-Sign in, review the Blueprint, enter private kitchen and admin PINs, and confirm
-the deployment. The Blueprint uses Render's native Python runtime, a paid Starter
+Sign in, review the Blueprint, and confirm the deployment. Both kitchen and admin
+PINs are configured as `1234`. The Blueprint uses Render's native Python runtime, a paid Starter
 web service, and a 1 GB persistent disk for orders. Review Render's displayed
 price before deploying. The free tier does not support this persistent disk.
 Render assigns the public website URL after deployment; use the URL shown in
@@ -46,10 +46,10 @@ Open http://127.0.0.1:8000/?table=5 in your browser. Keep the terminal open.
 1. Browse the menu and customise an item.
 2. Review the cart and choose a demo payment result.
 3. Only successful demo payments create kitchen orders. Failed payments keep the cart.
-4. Open `/kitchen` and enter the local demo PIN `2468`.
+4. Open `/kitchen` and enter the local demo PIN `1234`.
 5. Advance Paid → Preparing → Ready → Served. Customer order screens refresh every five seconds.
 6. Select Call your waiter. Staff can mark that table request attended in the kitchen.
-7. Open `/admin` and enter the local demo admin PIN `1357` to see all-time demo
+7. Open `/admin` and enter the local demo admin PIN `1234` to see all-time demo
    sales, active and served order counts, recent orders, and outstanding waiter requests.
 
 Kitchen and Admin are separate dashboards, linked in the customer menu footer.

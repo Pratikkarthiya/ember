@@ -18,8 +18,8 @@ ROOT = Path(__file__).resolve().parent
 MENU = json.loads((ROOT / 'menu.json').read_text(encoding='utf-8-sig'))
 ITEMS = {item['id']: item for item in MENU}
 DB = Path(os.environ.get('EMBER_DATABASE', ROOT / 'data' / 'ember.sqlite3'))
-PIN = os.environ.get('EMBER_KITCHEN_PIN', '2468')
-ADMIN_PIN = os.environ.get('EMBER_ADMIN_PIN', '1357')
+PIN = os.environ.get('EMBER_KITCHEN_PIN', '1234')
+ADMIN_PIN = os.environ.get('EMBER_ADMIN_PIN', '1234')
 
 
 @contextmanager
@@ -381,8 +381,8 @@ def main():
     args = parser.parse_args()
     init_db()
     print(f'EMBER: http://{args.host}:{args.port}/?table=5', flush=True)
-    print('Kitchen PIN: use EMBER_KITCHEN_PIN; local demo default is 2468.', flush=True)
-    print('Admin: /admin; use EMBER_ADMIN_PIN; local demo default is 1357.', flush=True)
+    print('Kitchen PIN: use EMBER_KITCHEN_PIN; local demo default is 1234.', flush=True)
+    print('Admin: /admin; use EMBER_ADMIN_PIN; local demo default is 1234.', flush=True)
     print('Demo payments only. Press Ctrl+C to stop.', flush=True)
     server = ThreadingHTTPServer((args.host, args.port), Handler)
     server.daemon_threads = True
