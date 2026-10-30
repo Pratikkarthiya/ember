@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="ember">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eee4e0"><title>EMBER | A little moment, made yours</title>
+<meta name="description" content="Coffee, breakfast, kitchen plates and bakes. Find your favourite and order to your table at EMBER.">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body class="customer">
+<a class="skip-link" href="#menu">Skip to the menu</a>
+<div class="cafe-shell">
+  <header class="table-header glass">
+    <a class="wordmark" href="/" aria-label="Ember home">ember<span>®</span><small>COFFEE &amp; KITCHEN</small></a>
+    <div class="header-center"><i class="live-dot" aria-hidden="true"></i> A good place to slow down.</div>
+    <div class="header-actions"><span class="table-pill">Table <b id="tableNo">05</b></span><button id="ordersBtn" class="btn text-button">My orders <span id="orderCount"></span> ↗</button><button id="helpBtn" class="btn text-button">Call waiter</button></div>
+  </header>
+  <section class="story-panel glass" aria-labelledby="welcomeTitle">
+    <div class="story-copy">
+      <span class="edition"><i class="live-dot" aria-hidden="true"></i> YOUR EVERYDAY LITTLE ESCAPE</span>
+      <h1 id="welcomeTitle">Good things.<br><em>Made with warmth.</em></h1>
+      <p>Your favourite coffee. A plate worth pausing for.<br>Settle in. We’ll take care of the rest.</p>
+      <a class="btn story-link" href="#menu">Find your favourite <span aria-hidden="true">↘</span></a>
+      <div class="story-bottom"><span>BREWED WITH CARE</span><span aria-hidden="true">✳</span><span>SHARED WITH LOVE</span></div>
+    </div>
+    <div class="hero-visual"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Freshly brewed coffee on a café table" fetchpriority="high"><span class="hero-stamp" aria-hidden="true">SIP.<br>SAVOUR.<br>STAY.</span><div class="photo-label glass"><span class="photo-icon" aria-hidden="true">☕</span><div><strong>A little pause. A better day.</strong><span>Something good is brewing.</span></div><span aria-hidden="true">↗</span></div></div>
+  </section>
+  <main class="menu-workspace">
+    <section id="menu" class="menu-book" aria-labelledby="menuTitle">
+      <div class="menu-heading"><div><div class="eyebrow">THE GOOD STUFF</div><h2 id="menuTitle">What are you craving<span>?</span></h2><p>Find a favourite. Make it yours. We’ll bring it over.</p></div><span class="menu-flower" aria-hidden="true">✳</span></div>
+      <div class="menu-tools"><label class="search glass"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="A coffee, a craving, a little something…" aria-label="Search menu"></label><label class="veg-toggle glass"><input id="veg" type="checkbox"> Veg only</label></div>
+      <nav id="categories" class="category-index" aria-label="Menu categories"></nav>
+      <div id="menuGrid" class="menu-pages"></div><div id="empty" class="empty glass" hidden>No matches this time. Try another craving.</div>
+    </section>
+    <aside class="order-rail" aria-labelledby="collectionTitle"><div class="order-paper card glass"><div class="receipt-masthead"><span>YOUR LITTLE COLLECTION</span><span aria-hidden="true">↗</span></div><h2 id="collectionTitle">On your table.</h2><p class="order-intro">Good choices start here.</p><div id="orderPreview" aria-live="polite"></div><div class="rail-total"><span>Items subtotal</span><strong id="previewTotal">₹0</strong></div><p class="muted">Illustrative tax at checkout.<br>Demo payments only.</p><button id="reviewOrder" class="btn primary">Review your order <span aria-hidden="true">↗</span></button><div class="receipt-end"><i class="live-dot" aria-hidden="true"></i> Made fresh. Brought to you.</div></div><div class="rail-note"><span aria-hidden="true">♡</span><p>A little care in every cup.<br>A little joy in every bite.</p></div></aside>
+  </main>
+  <footer class="menu-footer"><a class="footer-brand" href="/">ember<span>®</span></a><span>GOOD COFFEE. GOOD FOOD. YOUR KIND OF PLACE.</span><div><a href="/kitchen">Kitchen ↗</a><a href="/admin">Admin ↗</a></div></footer>
+</div>
+<button id="cartFloat" class="cart-float glass" hidden><span id="cartCount">0</span><span class="cart-label">Your order</span><b id="cartTotal">₹0</b><span>Review order ↗</span></button>
+<dialog id="modal"><button id="closeModal" class="btn close" aria-label="Close dialog">×</button><div id="modalBody"></div></dialog><div id="toast" role="status" aria-live="polite"></div><script src="/app.js"></script>
+</body></html>

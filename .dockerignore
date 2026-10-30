@@ -1,0 +1,7 @@
+.git
+.env
+.env.*
+data
+__pycache__
+*.pyc
+skills

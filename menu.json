@@ -1,0 +1,123 @@
+[
+  {
+    "id": "cappuccino",
+    "name": "The everyday cappuccino",
+    "price": 180,
+    "cat": "Coffee & brews",
+    "veg": true,
+    "tag": "HOUSE FAVOURITE",
+    "desc": "A double shot, silky milk, and a moment to yourself.",
+    "image": "photo-1572442388796-11668a67e53d",
+    "time": "5–8 MIN",
+    "options": [
+      "Regular",
+      "Oat milk +₹40",
+      "Extra shot +₹50"
+    ]
+  },
+  {
+    "id": "toast",
+    "name": "The sunny-side sourdough",
+    "price": 290,
+    "cat": "Slow mornings",
+    "veg": false,
+    "tag": "A FRESH START",
+    "desc": "A sunny-side egg on sourdough, with a little chilli crunch.",
+    "image": "photo-1525351484163-7529414344d8",
+    "time": "12–15 MIN",
+    "options": [
+      "Classic",
+      "Extra toast +₹60"
+    ]
+  },
+  {
+    "id": "croissant",
+    "name": "A very buttery croissant",
+    "price": 160,
+    "cat": "Bakes & little joys",
+    "veg": true,
+    "tag": "FRESHLY BAKED",
+    "desc": "Golden, flaky layers. Baked for slow, happy mornings.",
+    "image": "photo-1555507036-ab1f4038808a",
+    "time": "5–8 MIN",
+    "options": [
+      "Classic",
+      "Chocolate drizzle +₹30"
+    ]
+  },
+  {
+    "id": "coldbrew",
+    "name": "Cloud nine iced latte",
+    "price": 220,
+    "cat": "Coffee & brews",
+    "veg": true,
+    "tag": "SOMETHING DIFFERENT",
+    "desc": "Bold espresso, chilled milk, a soft swirl of sweetness.",
+    "image": "photo-1517701604599-bb29b565090c",
+    "time": "5–8 MIN",
+    "options": [
+      "Regular",
+      "Less ice"
+    ]
+  },
+  {
+    "id": "sandwich",
+    "name": "The comfort club",
+    "price": 320,
+    "cat": "Comfort plates",
+    "veg": false,
+    "tag": "MADE TO COMFORT",
+    "desc": "Grilled chicken, crisp greens, and our house herb mayo.",
+    "image": "photo-1528735602780-2552fd46c7af",
+    "time": "12–15 MIN",
+    "options": [
+      "Classic",
+      "Extra cheese +₹40"
+    ]
+  },
+  {
+    "id": "pancakes",
+    "name": "Sunday kind of pancakes",
+    "price": 280,
+    "cat": "Slow mornings",
+    "veg": false,
+    "tag": "TAKE IT SLOW",
+    "desc": "Fluffy stacks, seasonal berries, and a maple drizzle.",
+    "image": "photo-1528207776546-365bb710ee93",
+    "time": "12–15 MIN",
+    "options": [
+      "Classic",
+      "Extra maple +₹30"
+    ]
+  },
+  {
+    "id": "pasta",
+    "name": "Pesto, please",
+    "price": 340,
+    "cat": "Comfort plates",
+    "veg": true,
+    "tag": "FROM THE GARDEN",
+    "desc": "Basil pesto, warm pasta, parmesan and toasted nuts.",
+    "image": "photo-1473093295043-cdd812d0e601",
+    "time": "15–18 MIN",
+    "options": [
+      "Classic",
+      "Extra parmesan +₹40"
+    ]
+  },
+  {
+    "id": "cake",
+    "name": "One more chocolate bite",
+    "price": 240,
+    "cat": "Bakes & little joys",
+    "veg": false,
+    "tag": "SAVE A LITTLE ROOM",
+    "desc": "Rich chocolate cake. A soft centre. A very good decision.",
+    "image": "photo-1578985545062-69928b1d9587",
+    "time": "5–8 MIN",
+    "options": [
+      "Classic",
+      "Warm it up"
+    ]
+  }
+]

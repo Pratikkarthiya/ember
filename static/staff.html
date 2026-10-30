@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="ember">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>EMBER staff</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/staff.css">
+  <meta name="theme-color" content="#eee4e0">
+</head>
+<body class="staff-shell">
+  <aside class="workspace-nav" id="workspaceNav" hidden>
+    <a class="wordmark" href="/">ember<span>&reg;</span></a>
+    <span class="workspace-label">STAFF / ADMIN</span>
+    <nav aria-label="Admin workspace">
+      <button data-view="overview" class="active">01 <span>Overview</span></button>
+      <button data-view="menu">02 <span>Menu &amp; prices</span></button>
+      <button data-view="tables">03 <span>Tables &amp; links</span></button>
+      <button data-view="orders">04 <span>Order ledger</span></button>
+      <button data-view="requests">05 <span>Service calls</span></button>
+    </nav>
+    <div class="workspace-bottom"><p>EMBER<br><small>COFFEE &amp; KITCHEN</small></p><a href="/">Customer menu &#8599;</a><a href="/kitchen">Kitchen board &#8599;</a></div>
+  </aside>
+  <header>
+    <a class="logo" href="/">EMBER<span>®</span><small>CAFÉ &amp; KITCHEN</small></a>
+    <nav class="header-actions" aria-label="Staff modules">
+      <a href="/kitchen">Kitchen</a><a href="/admin">Admin</a><a href="/">Customer menu</a>
+      <button id="logout" class="outline-button" hidden>Sign out</button>
+    </nav>
+  </header>
+  <main class="staff-main">
+    <div class="eyebrow" id="moduleLabel"></div>
+    <h1 id="heading"></h1>
+    <p id="description"></p>
+    <section id="loginPanel" class="login-panel card glass" hidden>
+      <form id="loginForm">
+        <label class="field" for="pin" id="pinLabel">PIN</label>
+        <input id="pin" type="password" autocomplete="current-password" required maxlength="128">
+        <button class="primary btn" id="loginButton">Sign in</button>
+      </form>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="staff-toolbar"><span id="updated" class="muted" role="status"></span><button id="refresh" class="outline-button">Refresh</button></div>
+      <section id="overviewPanel"><div id="summary" class="summary-grid"></div><div class="ledger-title"><h2>Recent activity</h2><span class="muted">Latest paid orders</span></div><div id="overviewRecent"></div></section>
+      <section id="management" hidden aria-labelledby="managementHeading">
+        <h2 id="managementHeading">Menu &amp; prices</h2>
+        <div class="management-grid">
+          <section class="management-panel" id="menuPanel">
+            <h3>Edit the menu</h3>
+            <label class="field" for="itemSelect">Choose an item to edit</label>
+            <select id="itemSelect"><option value="">Add a new item</option></select>
+            <form id="itemForm">
+              <div class="form-grid">
+                <label class="field">Item ID<input name="id" required maxlength="60" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="iced-mocha"></label>
+                <label class="field">Name<input name="name" required maxlength="100"></label>
+                <label class="field">Price (₹)<input name="price" type="number" required min="0" max="100000" step="1"></label>
+                <label class="field">Category<input name="cat" required maxlength="80" list="categoryList"></label>
+                <label class="field">Badge<input name="tag" required maxlength="60" value="FRESHLY MADE"></label>
+                <label class="field">Preparation time<input name="time" required maxlength="40" value="5–8 MIN"></label>
+              </div>
+              <datalist id="categoryList"></datalist>
+              <label class="field">Description<textarea name="desc" required maxlength="500" rows="2"></textarea></label>
+              <label class="field">Unsplash photo ID<input name="image" required maxlength="100" value="photo-1572442388796-11668a67e53d"></label>
+              <label class="field">Options (one per line)<textarea name="options" required rows="3">Regular</textarea></label>
+              <p class="muted">For an extra charge, use an option such as “Extra shot +₹50”. Prices are whole rupees.</p>
+              <label class="veg-toggle"><input name="veg" type="checkbox" checked> Vegetarian</label>
+              <button class="primary btn" id="saveItem">Add item</button>
+              <p id="itemMessage" role="status"></p>
+            </form>
+          </section>
+          <section class="management-panel" id="tablePanel">
+            <h3>Add a table</h3>
+            <form id="tableForm">
+              <label class="field">Table number<input name="number" type="number" required min="1" max="999" step="1"></label>
+              <label class="field">Table name<input name="label" maxlength="80" placeholder="Window table (optional)"></label>
+              <button class="primary btn" id="saveTable">Add table</button>
+              <p id="tableMessage" role="status"></p>
+            </form>
+            <p class="muted">Open or copy a table's link for customer ordering. For phones, open Admin using your computer's LAN address before copying links.</p>
+            <div id="tableList"></div>
+          </section>
+        </div>
+      </section>
+      <section id="requestsPanel" aria-labelledby="requestsHeading"><h2 id="requestsHeading">Waiter requests</h2><div id="requests" class="staff-grid"></div></section>
+      <section id="ordersPanel" aria-labelledby="ordersHeading">
+        <div class="staff-toolbar"><h2 id="ordersHeading">Orders</h2><label>Show <select id="filter"><option value="active">Active orders</option><option value="all">All orders</option><option value="0">Paid</option><option value="1">Preparing</option><option value="2">Ready</option><option value="3">Served</option></select></label></div>
+        <p class="muted">Showing up to 200 recent orders. Updates every five seconds.</p>
+        <div id="orders" class="staff-grid"></div>
+      </section>
+    </section>
+    <p id="message" role="status" aria-live="polite"></p>
+  </main>
+  <script src="/staff.js"></script>
+</body>
+</html>
