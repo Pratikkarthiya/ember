@@ -1,0 +1,26 @@
+# Persistent SQLite storage requires a paid Render service.
+services:
+  - type: web
+    name: ember
+    runtime: python
+    plan: starter
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/menu
+    autoDeployTrigger: off
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.9
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: EMBER_DATABASE
+        value: /var/data/ember.sqlite3
+      - key: EMBER_KITCHEN_PIN
+        sync: false
+      - key: EMBER_ADMIN_PIN
+        sync: false
+    disk:
+      name: ember-data
+      mountPath: /var/data
+      sizeGB: 1

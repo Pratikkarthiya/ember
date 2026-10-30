@@ -5,6 +5,20 @@ Requires Python 3.10 or newer. No third-party Python packages are required.
 
 ## Hosting the website
 
+### Deploy on Render
+
+[Deploy EMBER to Render](https://render.com/deploy?repo=https://github.com/Pratikkarthiya/ember)
+
+Sign in, review the Blueprint, enter private kitchen and admin PINs, and confirm
+the deployment. The Blueprint uses Render's native Python runtime, a paid Starter
+web service, and a 1 GB persistent disk for orders. Review Render's displayed
+price before deploying. The free tier does not support this persistent disk.
+Render assigns the public website URL after deployment; use the URL shown in
+the service dashboard. Automatic deployments are disabled; deploy future updates
+from Render after testing them.
+
+### Other Docker hosts
+
 The included `Dockerfile` runs the complete Python application. Connect this
 repository to a Docker-capable web host, expose its `PORT` environment variable,
 and attach a persistent disk at `/data`. The SQLite database is stored at
